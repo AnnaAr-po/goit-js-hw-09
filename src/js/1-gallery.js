@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -64,19 +67,16 @@ const images = [
   },
 ];
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
 const gallery = document.querySelector('.gallery');
 const galleryMarkup = images
   .map(
     ({ preview, original, description }) => `
       <li class="gallery-item">
-	<a class="gallery-link" href="large-image.jpg">
+	<a class="gallery-link" href="${original}">
 		<img 
 			class="gallery-image" 
-			src="small-image.jpg" 
-			alt="Image description" 
+			src="${preview}" 
+			alt="${description}" 
 			/>
 	</a>
 </li>
